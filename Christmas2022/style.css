@@ -1,0 +1,383 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: #165319;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+    transform-style: preserve-3D;
+  }
+  .side-img{
+    /* background-image: url("img/92363267110.png"); */
+    background-size: 40vh auto;
+    background-repeat: no-repeat;
+    /* background-position: 30px 0px; */
+    position:absolute;
+    height:60vh;
+    width: 300px;
+    /* bottom: 0px; */
+    /* right:0px; */
+    opacity: 0.8;
+    filter: blur(5px);
+    transition: 0.5s;
+  }
+  .side-img1{
+    background-image: url("img/92363267110.png");
+    background-position: 30px 0px;
+    bottom: 0px;
+    right:0px;
+  }
+  .side-img:hover{
+    filter: blur(0px);
+  }
+  .side-img2{
+    background-image: url("img/b8014a90f603738d2163d56505536c55f819ec1e.png");
+    background-position: 30px 20px;
+    bottom: 0px;
+    left:0px;
+    transform: rotateY(180deg);
+  }
+  .saying{
+    display: inline-block;
+    height: 25px;
+    width: 150px;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    color: #f00;
+    font-weight: 700;
+    transition: 0.4s;
+    background-color: #f5e0a3;
+  }
+  .side-img2 .saying{
+    position:absolute;
+    visibility: hidden;
+    transform: rotateY(180deg);
+    left: 0px;
+  }
+  .side-img .saying{
+    visibility: hidden;
+  }
+  .side-img:hover .saying{
+    visibility: visible;
+  }
+  .branch{
+    background-color: brown;
+    position: absolute;
+    bottom: -50px;
+    left: 48%;
+    width: 10px;
+    height: 60px;
+    animation: color-branch 5s infinite linear;
+  }
+  .img{
+    position: absolute;
+    background: no-repeat center center;
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .img1{
+    left: 100px;
+    top: 40px;
+    animation: bgimg1 5s infinite linear;
+}
+.img2{
+    right: 100px;
+    top: 80px;
+    animation: bgimg2 5s infinite linear;
+}
+.img3{
+    left: 100px;
+    top: 120px;
+    animation: bgimg3 5s infinite linear;
+}
+.img4{
+    right: 100px;
+    top: 160px;
+    animation: bgimg4 5s infinite linear;
+}
+.img5{
+    left: 100px;
+    top: 200px;
+    animation: bgimg5 5s infinite linear;
+}
+.img6{
+    right: 100px;
+    top: 240px;
+    animation: bgimg6 5s infinite linear;
+}
+.img7{
+    left: 100px;
+    top: 280px;
+    animation: bgimg7 5s infinite linear;
+}
+.side-img3{
+  background: no-repeat center center;
+  background-size: 50px 50px;
+  background-image: url("https://c-ssl.duitang.com/uploads/item/201706/25/20170625140700_Pecft.jpeg");
+  left: 400px;
+  top: 30px;
+  animation: kiss1 5s linear;
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+}
+.side-img4{
+  background: no-repeat center center;
+  background-size: 50px 50px;
+  background-image: url("https://c-ssl.duitang.com/uploads/item/201706/25/20170625140712_timvX.jpeg");
+  right: 400px;
+  top: 30px;
+  animation: kiss2 5s linear;
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+}
+.side-img5{
+  z-index: 5;
+  background: no-repeat center center;
+  background-size: 90px 50px;
+  background-position: -12px;
+  background-image: url("https://gd-hbimg.huaban.com/89c708c6f9bee523f250ffd5b4b6f7eba318ddc3d4fc0-HE3YHV");
+  right: 48%;
+  top: 30px;
+  animation: kiss3 1s linear;
+  animation-delay: 5s;
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+.side-img5:hover{
+  animation-play-state: running;
+}
+.side-img5:hover ~ .side-img3{
+  animation-play-state: running;
+}
+.side-img5:hover ~ .side-img4{
+  animation-play-state: running;
+}
+  .tree {
+    /* background: #165319; */
+    position: relative;
+    height: 50vmin;
+    width: 25vmin;
+    font-size: 1px;
+    transform-style: preserve-3d;
+    -webkit-animation: spin 5s infinite linear;
+            animation: spin 5s infinite linear;
+  }
+  .tree:hover{
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+  .tree__light {
+    transform-style: preserve-3d;
+    position: absolute;
+    height: 1vmin;
+    width: 1vmin;
+    font-size: 1px;
+    border-radius: 50%;
+    -webkit-animation: flash calc(var(--speed) * 1s) calc(var(--delay) * 1s) infinite steps(4), appear 0.5s calc(var(--appear) * 0.05s) both;
+            animation: flash calc(var(--speed) * 1s) calc(var(--delay) * 1s) infinite steps(4), appear 0.5s calc(var(--appear) * 0.05s) both;
+    left: 50%;
+    transform: translate(50%, 50%) rotateY(calc(var(--rotate, 0) * 1deg)) translate3d(0, 0, calc(var(--radius, 0) * 1vmin));
+    bottom: calc(var(--y, 0) * 1%);
+  }
+  .tree__star {
+    stroke-width: 5vmin;
+    stroke: #f5e0a3;
+    filter: drop-shadow(0 0 2vmin #fcf1cf);
+    height: 5vmin;
+    width: 5vmin;
+    overflow: visible !important;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: absolute;
+    stroke-dasharray: 1000 1000;
+    fill: none;
+    -webkit-animation: stroke 1s calc((var(--delay) * 0.95) * 0.05s) both;
+            animation: stroke 1s calc((var(--delay) * 0.95) * 0.05s) both;
+  }
+  @-webkit-keyframes stroke {
+    from {
+      stroke-dashoffset: -1000;
+    }
+  }
+  @keyframes stroke {
+    from {
+      stroke-dashoffset: -1000;
+    }
+  }
+  @-webkit-keyframes spin {
+    to {
+      transform: rotateY(-360deg);
+    }
+  }
+  @keyframes spin {
+    to {
+      transform: rotateY(-360deg);
+    }
+  }
+  @-webkit-keyframes appear {
+    from {
+      opacity: 0;
+    }
+  }
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes flash {
+    0%, 100% {
+      background: #f00;
+      color: #000;
+    }
+    20% {
+      background: #fff;
+      color: rgb(137, 62, 62);
+    }
+    40% {
+      background: #f00;
+      color: #000;
+    }
+    60% {
+      background: #fff;
+      color: rgb(161, 0, 0);
+    }
+    80% {
+      background: #f00;
+      color: rgb(182, 150, 61);
+    }
+  }
+  @keyframes flash {
+    0%, 100% {
+      background: #f00;
+      color: #000;
+    }
+    20% {
+      background: #fff;
+      color: rgb(137, 62, 62);
+    }
+    40% {
+      background: #f00;
+      color: #000;
+    }
+    60% {
+      background: #fff;
+      color: rgb(161, 0, 0);
+    }
+    80% {
+      background: #f00;
+      color: rgb(182, 150, 61);
+    }
+  }
+  @keyframes color-branch{
+    0%, 100% {
+        background: brown;
+      }
+      20% {
+        background: rgb(209, 178, 178);
+      }
+      40% {
+        background: brown;
+      }
+      60% {
+        background: rgb(209, 178, 178);
+      }
+      80% {
+        background: brown;
+      }
+  }
+  @keyframes bgimg1{
+    0%, 100% {
+        background-image: url("https://tse3-mm.cn.bing.net/th/id/OIP-C.wSqIljbVkbmQ7tVV21xM1QHaHa?w=198&h=198&c=7&r=0&o=5&dpr=2&pid=1.7");
+      }
+      50% {
+        background-image: url("https://tse4-mm.cn.bing.net/th/id/OIP-C.DrSze1WaqdmR9yLgnArLCgAAAA?w=170&h=180&c=7&r=0&o=5&dpr=2&pid=1.7");
+      }
+  }
+  @keyframes bgimg2{
+    0%, 100% {
+        background-image: url("https://c-ssl.duitang.com/uploads/item/202003/17/20200317095835_fRY8j.jpeg");
+      }
+      50% {
+        background-image: url("https://c-ssl.duitang.com/uploads/item/202002/21/20200221042919_ufvmo.jpg");
+      }
+  }
+  @keyframes bgimg3{
+    0%, 100% {
+        background-image: url("https://c-ssl.duitang.com/uploads/item/202004/07/20200407183415_5rV3y.jpeg");
+      }
+      50% {
+        background-image: url("https://c-ssl.duitang.com/uploads/item/201905/19/20190519133945_zjwkb.jpg");
+      }
+  }
+  @keyframes bgimg4{
+    0%, 100% {
+        background-image: url("https://pics1.baidu.com/feed/7acb0a46f21fbe0924855e8360984f358544ad48.png@f_auto?token=6fc61fc28f10e449b8932290302a823f&s=7C3816D7C6615CADB745BDFB0300C03D");
+      }
+      50% {
+        background-image: url("https://pics1.baidu.com/feed/738b4710b912c8fc27435bb6f6fbd143d7882113.png@f_auto?token=156421d4add5aec69208541c33c72c39&s=75AEB55743C168EF527529E80300A03E");
+      }
+  }
+  @keyframes bgimg5{
+    0%, 100% {
+        background-image: url("https://b0.bdstatic.com/ugc/UCrnuWBYDWh3izUk9oJa8g22cae8d1cdec6dcd0fee475428cff4fa.jpg@h_1280");
+      }
+      50% {
+        background-image: url("https://b0.bdstatic.com/ugc/UCrnuWBYDWh3izUk9oJa8ga90f1b30a878fd00667c7b57455b11d6.jpg@h_1280");
+      }
+  }
+  @keyframes bgimg6{
+    0%, 100% {
+        background-image: url("https://inews.gtimg.com/newsapp_bt/0/13375008324/1000");
+    }
+      50% {
+        background-image: url("https://img2.woyaogexing.com/2020/08/16/2fa6f342688e4b9e9a6defa52919d92d!400x400.jpeg");
+      }
+  }
+  @keyframes bgimg7{
+    0%, 100% {
+        background-image: url("https://pics7.baidu.com/feed/86d6277f9e2f07083a3f58bad601389fa901f279.jpeg@f_auto?token=b0187bd5c35620cc7c39c76b8a50bfcd");
+    }
+      50% {
+        background-image: url("https://pics1.baidu.com/feed/3b87e950352ac65cbba1a540c4d7321793138a0d.jpeg@f_auto?token=22a6168a0a08e3928de87d49c07eda0a");
+      }
+  }
+  @keyframes kiss1{
+    0%{
+      left: 400px;
+      opacity: 0.8;
+    }
+    100%{
+      left: 48%;
+      opacity: 1;
+    }
+  }
+  @keyframes kiss2{
+    0%{
+      right: 400px;
+      opacity: 0.8;
+    }
+    100%{
+      right: 48%;
+      opacity: 1;
+    }
+  }
+  @keyframes kiss3{
+    0%{
+      opacity: 0;
+      filter: blur(5px);
+    }
+    100%{
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
